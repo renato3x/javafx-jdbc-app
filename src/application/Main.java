@@ -7,6 +7,13 @@ import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
+  private static Scene mainScene;
+
+  public static Scene getMainScene() {
+    return mainScene;
+  }
+
   @Override
   public void start(Stage stage) throws Exception {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
@@ -20,10 +27,10 @@ public class Main extends Application {
      * tela
      */
 
-    Scene scene = new Scene(root);
+    mainScene = new Scene(root);
 
     stage.setTitle("Sample JavaFX Application");
-    stage.setScene(scene);
+    stage.setScene(mainScene);
 
     stage.show();
   }
