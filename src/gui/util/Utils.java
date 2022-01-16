@@ -8,4 +8,12 @@ public class Utils {
   public static Stage getCurrentStage(ActionEvent event) {
     return (Stage) ((Node) event.getSource()).getScene().getWindow();
   }
+
+  public static Integer tryParseToInt(String value) {
+    try {
+      return Integer.parseInt(value);
+    } catch (NumberFormatException e) {
+      return null;
+    }
+  }
 }
